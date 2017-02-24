@@ -7,16 +7,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.function.Consumer;
 
 class Callback implements Consumer<Consumer<JobResult>> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Callback.class);
 
-    static JobResult runAndNotify(Job job, Map<String, Object> parameters, Set<JobListener> listeners) {
+    static JobResult runAndNotify(Job job, Map<String, Object> parameters, Collection<JobListener> listeners) {
         if (listeners.isEmpty()) {
             return job.run(parameters);
         }

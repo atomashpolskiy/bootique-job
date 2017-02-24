@@ -32,9 +32,9 @@ class JobGroup implements Job {
     private Collection<Job> jobs;
     private DependencyGraph graph;
     private Scheduler scheduler;
-    private Set<JobListener> listeners;
+    private Collection<JobListener> listeners;
 
-    public JobGroup(String name, Collection<Job> jobs, DependencyGraph graph, Scheduler scheduler, Set<JobListener> listeners) {
+    public JobGroup(String name, Collection<Job> jobs, DependencyGraph graph, Scheduler scheduler, Collection<JobListener> listeners) {
         this.name = name;
         this.jobs = jobs;
         this.delegateSupplier = this::buildDelegate;

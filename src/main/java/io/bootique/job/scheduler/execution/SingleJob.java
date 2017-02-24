@@ -7,9 +7,9 @@ import io.bootique.job.runnable.JobResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 class SingleJob implements Job {
 
@@ -17,9 +17,9 @@ class SingleJob implements Job {
 
     private Job delegate;
     private JobExecution execution;
-    private Set<JobListener> listeners;
+    private Collection<JobListener> listeners;
 
-    SingleJob(Job delegate, JobExecution execution, Set<JobListener> listeners) {
+    SingleJob(Job delegate, JobExecution execution, Collection<JobListener> listeners) {
         this.delegate = delegate;
         this.execution = execution;
         this.listeners = listeners;
